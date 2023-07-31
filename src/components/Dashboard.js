@@ -1,7 +1,9 @@
 import React, { useState,useEffect,useContext} from 'react'
+import { BASE_URL } from '../services/helper';
 import { useNavigate } from 'react-router-dom';
 import { LoginContext } from './contextprovider/context';
 import CircularProgress from '@mui/material/CircularProgress';
+
 import Box from '@mui/material/Box';
 
 const Dashboard = () => {
@@ -15,7 +17,7 @@ const Dashboard = () => {
         let token = localStorage.getItem('usersdatatoken');
         //console.log(token);
 
-        const res = await fetch("/validuser", {
+        const res = await fetch(`${BASE_URL}/validuser`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

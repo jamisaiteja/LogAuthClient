@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify';
-
+import { BASE_URL } from '../services/helper';
 const PasswordReset = () => {
 
     const [email, setEmail] = useState("");
@@ -25,7 +25,7 @@ const PasswordReset = () => {
                 position: "top-center"
             })
         } else {
-            const res = await fetch("/sendpasswordlink", {
+            const res = await fetch(`${BASE_URL}/sendpasswordlink`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

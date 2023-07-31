@@ -2,6 +2,7 @@ import React ,{useState}from 'react'
 import "./all.css"
 import { toast } from 'react-toastify';
 import {NavLink} from "react-router-dom" 
+import { BASE_URL } from '../services/helper';
 
 const Register = () => {
     const [showPassword,setShowPassword] = useState(false);
@@ -101,7 +102,7 @@ const Register = () => {
             // alert("user registration successfully done");
 
             
-            const data = await fetch("/register", {
+            const data = await fetch(`${BASE_URL}/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

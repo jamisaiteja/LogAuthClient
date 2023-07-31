@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import { BASE_URL } from '../services/helper';
 import Avatar from '@mui/material/Avatar'; 
 import { LoginContext } from './contextprovider/context';
 import Menu from '@mui/material/Menu';
@@ -24,7 +25,7 @@ const Header = () => {
     const LogoutUser = async () => {
         let token = localStorage.getItem("usersdatatoken");
 
-        const res = await fetch("/logout", {
+        const res = await fetch(`${BASE_URL}/logout`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

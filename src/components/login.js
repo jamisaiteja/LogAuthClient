@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 //import Avatar from '@mui/material/Avatar';
 import {NavLink,useNavigate} from "react-router-dom" 
 import { toast } from 'react-toastify';
+import { BASE_URL } from '../services/helper';
 import "./all.css";
 
 const Login = () => {
@@ -65,7 +66,7 @@ const Login = () => {
         }else {
             //alert("User login successfully done");
 
-            const data = await fetch("/login", {
+            const data = await fetch(`${BASE_URL}/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

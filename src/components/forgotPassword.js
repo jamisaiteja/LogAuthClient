@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams, NavLink } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { BASE_URL } from '../services/helper';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -17,7 +18,7 @@ const ForgotPassword = () => {
     const [message, setMessage] = useState("");
 
     const userValid = async () => {
-        const res = await fetch(`/forgotpassword/${id}/${token}`, {
+        const res = await fetch(`${BASE_URL}/forgotpassword/${id}/${token}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -57,7 +58,7 @@ const ForgotPassword = () => {
                 position: "top-center"
             })
         } else {
-            const res = await fetch(`/${id}/${token}`, {
+            const res = await fetch(`${BASE_URL}/${id}/${token}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
