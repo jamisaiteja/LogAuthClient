@@ -5,7 +5,12 @@ import { LoginContext } from './contextprovider/context';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import Box from '@mui/material/Box';
-
+// git init
+// git add README.md
+// git commit -m "first commit"
+// git branch -M main
+// git remote add origin https://github.com/jamisaiteja/hihkjljl.git
+// git push -u origin main
 const Dashboard = () => {
     const [data, setData] = useState(false);
     const {LoginData,setLoginData} = useContext(LoginContext);
